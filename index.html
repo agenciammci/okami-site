@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Okami Fight Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background: #fff; color: #111; }
+    header { background: #000; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+    header img { height: 40px; }
+    nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { color: #cc0000; }
+    .cta-button { background: #cc0000; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+
+    .slider { width: 100%; height: 400px; overflow: hidden; position: relative; }
+    .slides { display: flex; width: 400%; animation: slide 16s infinite; }
+    .slide { width: 100vw; height: 400px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; font-size: 2em; font-weight: bold; }
+    .slide1 { background-image: url('https://source.unsplash.com/featured/?mma'); }
+    .slide2 { background-image: url('https://source.unsplash.com/featured/?muaythai'); }
+    .slide3 { background-image: url('https://source.unsplash.com/featured/?jiujitsu'); }
+    .slide4 { background-image: url('https://source.unsplash.com/featured/?boxing'); }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-100vw); }
+      50% { transform: translateX(-200vw); }
+      75% { transform: translateX(-300vw); }
+      100% { transform: translateX(0); }
+    }
+
+    section { padding: 60px 30px; max-width: 1100px; margin: auto; }
+    h2 { color: #cc0000; margin-bottom: 20px; font-size: 2em; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card img { width: 100%; border-radius: 4px; margin-bottom: 10px; }
+    .card:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+    .form-group { margin-bottom: 15px; }
+    input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+    footer { background: #000; color: #fff; padding: 20px 30px; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/logo-okami.png" alt="Okami Logo" />
+    <nav>
+      <a href="#quemsomos">Quem Somos</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#programas">Programas</a>
+      <a href="#professores">Professores</a>
+      <a href="#horarios">Horários</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="cta-button">Agende sua aula</button>
+  </header>
+
+  <div class="slider">
+    <div class="slides">
+      <div class="slide slide1">DOMINE A TÉCNICA</div>
+      <div class="slide slide2">SUPERE SEUS LIMITES</div>
+      <div class="slide slide3">DISCIPLINA E RESPEITO</div>
+      <div class="slide slide4">A FORÇA DO ESPÍRITO</div>
+    </div>
+  </div>
+
+  <section id="quemsomos" class="sr">
+    <h2>Quem Somos</h2>
+    <p>A Okami Fight Club é uma academia de artes marciais que une tradição, técnica e estrutura moderna. Com professores de elite e metodologia própria, formamos atletas e cidadãos de todas as idades.</p>
+  </section>
+
+  <section id="modalidades" class="sr">
+    <h2>Modalidades</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?jiujitsu" alt="Jiu-Jitsu" />
+        <h3>Jiu-Jitsu</h3>
+        <p>Técnica, controle e eficiência no solo.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?judo" alt="Judô" />
+        <h3>Judô</h3>
+        <p>Arte de derrubar e dominar com respeito.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?muaythai" alt="Muay Thai" />
+        <h3>Muay Thai</h3>
+        <p>Impacto, precisão e força explosiva.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?boxing" alt="Boxe" />
+        <h3>Boxe</h3>
+        <p>A nobre arte do combate com punhos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="programas" class="sr">
+    <h2>Programas</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?kids,martialarts" alt="Kids">
+        <h3>Kids (4 a 12 anos)</h3>
+        <p>Desenvolvimento motor, disciplina e iniciação às artes marciais com segurança.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?teenagers,martialarts" alt="Teens">
+        <h3>Teens (13 a 17 anos)</h3>
+        <p>Treinos com foco em evolução técnica, respeito e autoconfiança.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?adults,training" alt="Adultos">
+        <h3>Adultos</h3>
+        <p>Condicionamento físico, técnica e mentalidade de superação para todas as idades.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?mma,fight" alt="Competidores">
+        <h3>Competidores</h3>
+        <p>Treinos intensivos voltados para alta performance e preparação para campeonatos.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?beginner,martialarts" alt="Iniciantes">
+        <h3>Iniciantes</h3>
+        <p>Aulas adaptadas para quem está começando e quer aprender com base sólida.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="professores" class="sr">
+    <h2>Professores</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?blackbelt" alt="Professor 1" />
+        <h3>Sensei Carlos</h3>
+        <p>Faixa preta de Judô, campeão brasileiro.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?mma" alt="Professor 2" />
+        <h3>Professor Diego</h3>
+        <p>Especialista em Muay Thai com 20 vitórias.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="horarios" class="sr">
+    <h2>Horários</h2>
+    <p>Consulte nossos horários de treinos por modalidade e idade. Tabela responsiva a ser inserida aqui.</p>
+  </section>
+
+  <section id="contato" class="sr">
+    <h2>Contato</h2>
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Seu nome" required />
+      </div>
+      <div class="form-group">
+        <input type="tel" placeholder="WhatsApp" required />
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Mensagem" rows="4"></textarea>
+      </div>
+      <button class="cta-button" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Okami Fight Club. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('.sr', {
+      origin: 'bottom',
+      distance: '40px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      interval: 200
+    });
+  </script>
+</body>
+</html>
