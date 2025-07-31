@@ -104,3 +104,141 @@
       border-radius: 8px;
       padding: 20px;
       background: #f9f9f9;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .form-group { margin-bottom: 15px; }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+    }
+    footer img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/logo-okami.png" alt="Okami Logo" />
+    <nav>
+      <a href="#quemsomos">Quem Somos</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#programas">Programas</a>
+      <a href="#professores">Professores</a>
+      <a href="#horarios">Horários</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="cta-button">Agende sua aula</button>
+  </header>
+
+  <div class="slider">
+    <div class="slides" id="slide-track">
+      <div class="slide" style="background-image: url('images/banner-jiu.jpg');">JIU JITSU</div>
+      <div class="slide" style="background-image: url('images/banner-judo.jpg');">JUDÔ</div>
+      <div class="slide" style="background-image: url('images/banner-box.jpg');">BOXE</div>
+    </div>
+    <div class="dots" id="dots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+  </div>
+
+  <section id="quemsomos" class="sr">
+    <h2>Quem Somos</h2>
+    <p>A Okami Fight Club é uma academia de artes marciais que une tradição, técnica e estrutura moderna. Com professores de elite e metodologia própria, formamos atletas e cidadãos de todas as idades.</p>
+  </section>
+
+  <section id="modalidades" class="sr">
+    <h2>Modalidades</h2>
+    <div class="grid">
+      <div class="card"><h3>Jiu-Jitsu</h3><p>Técnica, controle e eficiência no solo.</p></div>
+      <div class="card"><h3>Judô</h3><p>Arte de derrubar e dominar com respeito.</p></div>
+      <div class="card"><h3>Muay Thai</h3><p>Impacto, precisão e força explosiva.</p></div>
+      <div class="card"><h3>Boxe</h3><p>A nobre arte do combate com punhos.</p></div>
+    </div>
+  </section>
+
+  <section id="programas" class="sr">
+    <h2>Programas</h2>
+    <div class="grid">
+      <div class="card"><h3>Kids</h3><p>De 4 a 12 anos</p></div>
+      <div class="card"><h3>Teens</h3><p>De 13 a 17 anos</p></div>
+      <div class="card"><h3>Adultos</h3><p>Acima de 18 anos</p></div>
+      <div class="card"><h3>Competidores</h3><p>Treinos avançados e preparação para campeonatos</p></div>
+      <div class="card"><h3>Iniciantes</h3><p>Passo a passo para quem está começando</p></div>
+    </div>
+  </section>
+
+  <section id="professores" class="sr">
+    <h2>Professores</h2>
+    <div class="grid">
+      <div class="card"><h3>Sensei Carlos</h3><p>Faixa preta de Judô, campeão brasileiro</p></div>
+      <div class="card"><h3>Professor Diego</h3><p>Especialista em Muay Thai com 20 vitórias</p></div>
+    </div>
+  </section>
+
+  <section id="horarios" class="sr">
+    <h2>Horários</h2>
+    <p>Consulte nossos horários de treinos por modalidade e idade. Tabela responsiva a ser inserida aqui.</p>
+  </section>
+
+  <section id="contato" class="sr">
+    <h2>Contato</h2>
+    <form>
+      <div class="form-group"><input type="text" placeholder="Seu nome" required /></div>
+      <div class="form-group"><input type="tel" placeholder="WhatsApp" required /></div>
+      <div class="form-group"><textarea placeholder="Mensagem" rows="4"></textarea></div>
+      <button class="cta-button" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <img src="images/logo-okami.png" alt="Okami Logo Footer" />
+    <p>&copy; 2025 Okami Fight Club. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('.sr', {
+      origin: 'bottom',
+      distance: '40px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      interval: 200
+    });
+
+    let currentSlide = 0;
+    const slides = document.getElementById("slide-track");
+    const dots = document.querySelectorAll(".dot");
+
+    function goToSlide(n) {
+      currentSlide = n;
+      slides.style.transform = `translateX(-${n * 100}vw)`;
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[n].classList.add("active");
+    }
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % 3;
+      goToSlide(currentSlide);
+    }, 6000);
+  </script>
+</body>
+</html>
